@@ -1,6 +1,6 @@
-# study_up
+# StudyUp!
 
-A new Flutter project.
+An application I created functionally for students, and submission for my flutter class on [Dicoding](https://dicoding.com) 
 
 ## Getting Started
 
