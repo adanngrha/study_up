@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 import 'bottom_nav.dart';
 import 'screens/class.dart';
 import 'screens/assignment.dart';
 import 'screens/todo.dart';
-import 'screens/schedule.dart';
+import 'screens/event.dart';
 import 'screens/notes.dart';
 
 class Home extends StatefulWidget {
-  Home({Key? key}) : super(key: key);
+  const Home({Key? key}) : super(key: key);
 
   @override
   State<Home> createState() => _HomeState();
@@ -16,7 +17,13 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   int selectedIndex = 0;
 
-  List screens = [ClassPage(), AssignmentPage(), ToDoPage(), SchedulePage(), NotesPage()];
+  List screens = [
+    const ClassPage(),
+    const AssignmentPage(),
+    const ToDoPage(),
+    const EventPage(),
+    const NotesPage()
+  ];
 
   void onClicked(int index) {
     setState(() {
@@ -29,15 +36,31 @@ class _HomeState extends State<Home> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title:  Text('Study Up'),
+        title: const Text('Study Up'),
         backgroundColor: Colors.black,
       ),
-      body: Center(
-        child: screens.elementAt(selectedIndex),
-      ),
+      body: screens.elementAt(selectedIndex),
       bottomNavigationBar: BottomNavigation(
         selectedIndex: selectedIndex,
         onClicked: onClicked,
+      ),
+      floatingActionButton: SpeedDial(
+        icon: Icons.add,
+        animatedIcon: AnimatedIcons.menu_close,
+        children: [
+          SpeedDialChild(
+            child: const Icon(Icons.note_add),
+            label: 'Add a Note',
+          ),
+          SpeedDialChild(
+            child: const Icon(Icons.app_registration),
+            label: 'Add an Event',
+          ),
+          SpeedDialChild(
+            child: const Icon(Icons.add),
+            label: 'Add a Todo',
+          ),
+        ],
       ),
     );
   }

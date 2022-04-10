@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class AssignmentPage extends StatefulWidget {
-  AssignmentPage({Key? key}) : super(key: key);
+  const AssignmentPage({Key? key}) : super(key: key);
 
   @override
   State<AssignmentPage> createState() => _AssignmentPageState();

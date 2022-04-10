@@ -26,7 +26,7 @@ class BottomNavigation extends StatelessWidget {
       ),
       BottomNavigationBarItem(
         icon: Icon(Icons.calendar_month_rounded),
-        label: 'Schedule',
+        label: 'Event',
       ),
       BottomNavigationBarItem(
         icon: Icon(Icons.note_alt_rounded),
