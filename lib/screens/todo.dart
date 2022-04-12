@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class ToDoPage extends StatefulWidget {
-  const ToDoPage({Key? key}) : super(key: key);
+class ToDoScreen extends StatefulWidget {
+  const ToDoScreen({Key? key}) : super(key: key);
 
   @override
-  State<ToDoPage> createState() => _ToDoPageState();
+  State<ToDoScreen> createState() => _ToDoScreenState();
 }
 
-class _ToDoPageState extends State<ToDoPage> {
+class _ToDoScreenState extends State<ToDoScreen> {
   @override
   Widget build(BuildContext context) {
     return const Center(

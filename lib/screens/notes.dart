@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class NotesPage extends StatefulWidget {
-  const NotesPage({Key? key}) : super(key: key);
+class NotesScreen extends StatefulWidget {
+  const NotesScreen({Key? key}) : super(key: key);
 
   @override
-  State<NotesPage> createState() => _NotesPageState();
+  State<NotesScreen> createState() => _NotesScreenState();
 }
 
-class _NotesPageState extends State<NotesPage> {
+class _NotesScreenState extends State<NotesScreen> {
   @override
   Widget build(BuildContext context) {
     return const Center(

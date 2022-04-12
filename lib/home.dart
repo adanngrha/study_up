@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 import 'bottom_nav.dart';
-import 'screens/class.dart';
+import 'screens/class/class.dart';
 import 'screens/assignment.dart';
 import 'screens/todo.dart';
 import 'screens/event.dart';
@@ -18,11 +18,11 @@ class _HomeState extends State<Home> {
   int selectedIndex = 0;
 
   List screens = [
-    const ClassPage(),
-    const AssignmentPage(),
-    const ToDoPage(),
-    const EventPage(),
-    const NotesPage()
+    const ClassScreen(),
+    const AssignmentScreen(),
+    const ToDoScreen(),
+    const EventScreen(),
+    const NotesScreen()
   ];
 
   void onClicked(int index) {
@@ -58,7 +58,7 @@ class _HomeState extends State<Home> {
           ),
           SpeedDialChild(
             child: const Icon(Icons.add),
-            label: 'Add a Todo',
+            label: 'Add a Task',
           ),
         ],
       ),

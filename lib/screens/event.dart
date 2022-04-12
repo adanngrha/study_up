@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_calendar/calendar.dart';
 import 'package:study_up/model/event.dart';
 
-class EventPage extends StatefulWidget {
-  const EventPage({Key? key}) : super(key: key);
+class EventScreen extends StatefulWidget {
+  const EventScreen({Key? key}) : super(key: key);
 
   @override
-  State<EventPage> createState() => _EventPageState();
+  State<EventScreen> createState() => _EventScreenState();
 }
 
-class _EventPageState extends State<EventPage> {
+class _EventScreenState extends State<EventScreen> {
   @override
   Widget build(BuildContext context) {
     return Center(

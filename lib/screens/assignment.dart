@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class AssignmentPage extends StatefulWidget {
-  const AssignmentPage({Key? key}) : super(key: key);
+class AssignmentScreen extends StatefulWidget {
+  const AssignmentScreen({Key? key}) : super(key: key);
 
   @override
-  State<AssignmentPage> createState() => _AssignmentPageState();
+  State<AssignmentScreen> createState() => _AssignmentScreenState();
 }
 
-class _AssignmentPageState extends State<AssignmentPage> {
+class _AssignmentScreenState extends State<AssignmentScreen> {
   @override
   Widget build(BuildContext context) {
     return const Center(
