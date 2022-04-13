@@ -9,7 +9,7 @@ class ClassScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(
         builder: (BuildContext context, BoxConstraints constraints) {
-      if (constraints.maxWidth <= 600) {
+      if (constraints.maxWidth <= 650) {
         return const ClassScreenList();
       } else if (constraints.maxWidth <= 1200) {
         return const ClassScreenGrid(gridCount: 4);
@@ -53,12 +53,13 @@ class ClassScreenList extends StatelessWidget {
                       children: <Widget>[
                         Text(
                           course.name,
-                          style: const TextStyle(fontSize: 16.0),
+                          style: TextStyle(
+                              fontSize: 16.0, fontWeight: FontWeight.w700),
                         ),
                         const SizedBox(
                           height: 10,
                         ),
-                        Text(course.day),
+                        Text(course.day + ', ' + course.time),
                       ],
                     ),
                   ),
@@ -78,6 +79,51 @@ class ClassScreenGrid extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scrollbar(
+      isAlwaysShown: true,
+      child: Padding(
+        padding: EdgeInsets.all(24.0),
+        child: GridView.count(
+          crossAxisCount: gridCount,
+          crossAxisSpacing: 16,
+          mainAxisSpacing: 16,
+          children: courseList.map((course) {
+            return InkWell(
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return DetailClass(course: course);
+                }));
+              },
+              child: Card(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    Expanded(
+                      child: Image.asset(
+                        course.imageAsset,
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                    SizedBox(height: 8),
+                    Padding(
+                      padding: EdgeInsets.only(left: 8.0),
+                      child: Text(
+                        course.name,
+                        style: TextStyle(
+                            fontSize: 16.0, fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(left: 8.0, bottom: 8.0),
+                      child: Text(course.day + ', ' + course.time),
+                    )
+                  ],
+                ),
+              ),
+            );
+          }).toList(),
+        ),
+      ),
+    );
   }
 }

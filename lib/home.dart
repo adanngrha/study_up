@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';
+import 'package:study_up/screens/profile.dart';
 import 'bottom_nav.dart';
 import 'screens/class/class.dart';
 import 'screens/assignment.dart';
 import 'screens/todo.dart';
-import 'screens/event.dart';
 import 'screens/notes.dart';
 
 class Home extends StatefulWidget {
@@ -21,8 +21,8 @@ class _HomeState extends State<Home> {
     const ClassScreen(),
     const AssignmentScreen(),
     const ToDoScreen(),
-    const EventScreen(),
-    const NotesScreen()
+    const NotesScreen(),
+    const ProfileScreen()
   ];
 
   void onClicked(int index) {
@@ -51,10 +51,6 @@ class _HomeState extends State<Home> {
           SpeedDialChild(
             child: const Icon(Icons.note_add),
             label: 'Add a Note',
-          ),
-          SpeedDialChild(
-            child: const Icon(Icons.app_registration),
-            label: 'Add an Event',
           ),
           SpeedDialChild(
             child: const Icon(Icons.add),
