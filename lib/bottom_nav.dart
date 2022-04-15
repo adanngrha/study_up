@@ -21,14 +21,6 @@ class BottomNavigation extends StatelessWidget {
           icon: Icon(Icons.assignment),
           label: 'Assignment',
         ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.toc_outlined),
-          label: 'To-Do',
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.note_alt_rounded),
-          label: 'Notes',
-        )
       ],
       currentIndex: selectedIndex,
       onTap: onClicked,

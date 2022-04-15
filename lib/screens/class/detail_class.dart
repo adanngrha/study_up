@@ -173,24 +173,25 @@ class _DetailClassWebState extends State<DetailClassWeb> {
                               ),
                             ),
                             Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
                                 Column(
                                   children: <Widget>[
-                                    SizedBox(height: 8.0),
-                                    Text(widget.course.day)
+                                    Center(child: Text(widget.course.day))
                                   ],
                                 ),
                                 Column(
                                   children: <Widget>[
-                                    SizedBox(width: 8.0),
-                                    Text('Kelas ' + widget.course.room)
+                                    Center(
+                                        child: Text(
+                                            'Kelas ' + widget.course.room,
+                                            style: TextStyle(
+                                                fontWeight: FontWeight.bold)))
                                   ],
                                 ),
                                 Column(
                                   children: <Widget>[
-                                    SizedBox(height: 8.0),
-                                    Text(widget.course.time)
+                                    Center(child: Text(widget.course.time))
                                   ],
                                 ),
                               ],
