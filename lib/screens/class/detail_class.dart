@@ -26,46 +26,20 @@ class DetailClassMobile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+          leading: IconButton(
+            icon: Icon(Icons.arrow_back_rounded),
+            onPressed: () {
+              Navigator.pop(context);
+            },
+          ),
+          title: Text(course.name)),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
-              SafeArea(
-                child: Padding(
-                  padding: EdgeInsets.all(8.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      CircleAvatar(
-                        backgroundColor: Colors.grey,
-                        child: IconButton(
-                          icon: Icon(
-                            Icons.arrow_back,
-                            color: Colors.white,
-                          ),
-                          onPressed: () {
-                            Navigator.pop(context);
-                          },
-                        ),
-                      )
-                    ],
-                  ),
-                ),
-              ),
               Image.asset(course.imageAsset),
-              // Nama
-              Container(
-                margin: EdgeInsets.only(top: 16.0),
-                child: Text(
-                  course.name,
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 30.0,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
               // Baris Info
               Container(
                 margin: EdgeInsets.symmetric(vertical: 16.0),
@@ -177,7 +151,9 @@ class _DetailClassWebState extends State<DetailClassWeb> {
                               children: [
                                 Column(
                                   children: <Widget>[
-                                    Center(child: Text(widget.course.day))
+                                    Center(
+                                        child: Text(widget.course.day,
+                                            textAlign: TextAlign.center))
                                   ],
                                 ),
                                 Column(
@@ -185,13 +161,16 @@ class _DetailClassWebState extends State<DetailClassWeb> {
                                     Center(
                                         child: Text(
                                             'Kelas ' + widget.course.room,
+                                            textAlign: TextAlign.center,
                                             style: TextStyle(
                                                 fontWeight: FontWeight.bold)))
                                   ],
                                 ),
                                 Column(
                                   children: <Widget>[
-                                    Center(child: Text(widget.course.time))
+                                    Center(
+                                        child: Text(widget.course.time,
+                                            textAlign: TextAlign.center))
                                   ],
                                 ),
                               ],
@@ -205,11 +184,15 @@ class _DetailClassWebState extends State<DetailClassWeb> {
                               ),
                             ),
                             Container(
-                              child: IconButton(
-                                icon: Icon(Icons.arrow_back),
+                              child: ElevatedButton.icon(
                                 onPressed: () {
                                   Navigator.pop(context);
                                 },
+                                icon: Icon(
+                                  Icons.arrow_back_rounded,
+                                  size: 24.0,
+                                ),
+                                label: Text('Kembali'),
                               ),
                             )
                           ],

@@ -9,7 +9,7 @@ class ClassAppBar extends StatelessWidget implements PreferredSizeWidget {
       preferredSize: const Size.fromHeight(100),
       child: AppBar(
         centerTitle: true,
-        title: const Text('Classes'),
+        title: const Text('Daftar Kelas'),
         backgroundColor: Colors.black,
       ),
     );
@@ -27,10 +27,11 @@ class AssigmentAppBar extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
       centerTitle: true,
       backgroundColor: Colors.black,
+      automaticallyImplyLeading: false,
       bottom: TabBar(
         tabs: [
-          Tab(text: 'Assigned'), 
-          Tab(text: 'Returned')
+          Tab(text: 'Ditugaskan'), 
+          Tab(text: 'Dikumpulkan'),
           ]
           ),
     );

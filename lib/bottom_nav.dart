@@ -15,11 +15,11 @@ class BottomNavigation extends StatelessWidget {
       items: const [
         BottomNavigationBarItem(
           icon: Icon(Icons.class__rounded),
-          label: 'Class',
+          label: 'Kelas',
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.assignment),
-          label: 'Assignment',
+          label: 'Tugas',
         ),
       ],
       currentIndex: selectedIndex,

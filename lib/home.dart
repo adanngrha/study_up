@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 import 'package:study_up/appbar.dart';
 import 'bottom_nav.dart';
 import 'screens/class/class.dart';
@@ -38,20 +37,6 @@ class _HomeState extends State<Home> {
         bottomNavigationBar: BottomNavigation(
           selectedIndex: selectedIndex,
           onClicked: onClicked,
-        ),
-        floatingActionButton: SpeedDial(
-          icon: Icons.add,
-          animatedIcon: AnimatedIcons.menu_close,
-          children: [
-            SpeedDialChild(
-              child: const Icon(Icons.note_add),
-              label: 'Add a Note',
-            ),
-            SpeedDialChild(
-              child: const Icon(Icons.add),
-              label: 'Add a Task',
-            ),
-          ],
         ),
       ),
     );
