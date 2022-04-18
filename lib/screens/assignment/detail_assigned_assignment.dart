@@ -28,6 +28,7 @@ class DetailAssignedMobile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+          backgroundColor: Color(0xff6F73D2),
           leading: IconButton(
             icon: Icon(Icons.arrow_back_rounded),
             onPressed: () {
@@ -135,7 +136,7 @@ class _TurnButtonState extends State<TurnButton> {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      style: ElevatedButton.styleFrom(fixedSize: const Size(120, 40)),
+      style: ElevatedButton.styleFrom(fixedSize: const Size(120, 40), primary: Color(0xff6F73D2)), 
       onPressed: isNotTurned
           ? () {
               setState(() => isNotTurned = false);

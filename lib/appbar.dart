@@ -10,7 +10,7 @@ class ClassAppBar extends StatelessWidget implements PreferredSizeWidget {
       child: AppBar(
         centerTitle: true,
         title: const Text('Daftar Kelas'),
-        backgroundColor: Colors.black,
+        backgroundColor: Color(0xff6F73D2),
       ),
     );
   }
@@ -26,7 +26,7 @@ class AssigmentAppBar extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return AppBar(
       centerTitle: true,
-      backgroundColor: Colors.black,
+      backgroundColor: Color(0xff6F73D2),
       automaticallyImplyLeading: false,
       bottom: TabBar(
         tabs: [

@@ -24,7 +24,7 @@ class BottomNavigation extends StatelessWidget {
       ],
       currentIndex: selectedIndex,
       onTap: onClicked,
-      selectedItemColor: Colors.red,
+      selectedItemColor: Color(0xFF6F73D2),
       unselectedItemColor: Colors.black,
       showUnselectedLabels: true,
     );

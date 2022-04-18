@@ -28,6 +28,7 @@ class DetailTurnedMobile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+          backgroundColor: Color(0xff6F73D2),
           leading: IconButton(
             icon: Icon(Icons.arrow_back_rounded),
             onPressed: () {
