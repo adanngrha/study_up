@@ -83,15 +83,52 @@ class _DetailTurnedWebState extends State<DetailTurnedWeb> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-          leading: IconButton(
-            icon: Icon(Icons.arrow_back_rounded),
-            onPressed: () {
-              Navigator.pop(context);
-            },
-          ),
-          title: Text(
-              widget.assignment.course + ' (' + widget.assignment.room + ')')),
+      body: SafeArea(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+              margin: EdgeInsets.all(25.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  TextButton.icon(
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    icon: Icon(Icons.arrow_back_ios, size: 18),
+                    label: Text("Kembali"),
+                  ),
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                        fixedSize: const Size(130, 40)),
+                    onPressed: null,
+                    child: const Text('Dikumpulkan'),
+                  ),
+                ],
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.symmetric(horizontal: 25.0),
+              child: Text(
+                widget.assignment.course + ' (' + widget.assignment.room + ')',
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
+              ),
+            ),
+            Container(
+                margin: EdgeInsets.symmetric(horizontal: 25.0),
+                child: Text('Deadline ' + widget.assignment.due)),
+            Container(
+                margin: EdgeInsets.only(top: 20, left: 25, right: 25),
+                child: Text('Instruksi',
+                    style:
+                        TextStyle(fontWeight: FontWeight.bold, fontSize: 17))),
+            Container(
+                margin: EdgeInsets.symmetric(horizontal: 25.0),
+                child: Text(widget.assignment.instructions)),
+          ],
+        ),
+      ),
     );
   }
 }

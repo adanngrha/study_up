@@ -48,16 +48,10 @@ class DetailAssignedMobile extends StatelessWidget {
                     assignment.title,
                     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
                   ),
-                  ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                        fixedSize: const Size(120, 40)),
-                    onPressed: () {},
-                    child: const Text('Kumpulkan'),
-                  ),
+                  TurnButton(),
                 ],
               ),
-              Container(
-                  child: Text('Deadline ' + assignment.due)),
+              Container(child: Text('Deadline ' + assignment.due)),
               Container(
                   margin: EdgeInsets.only(top: 20),
                   child: Text('Instruksi',
@@ -86,27 +80,68 @@ class _DetailAssignedWebState extends State<DetailAssignedWeb> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Container(
-          margin: EdgeInsets.all(25.0),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              TextButton.icon(
-                onPressed: () {
-                  Navigator.pop(context);
-                },
-                icon: Icon(Icons.arrow_back_ios, size: 18),
-                label: Text("Kembali"),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+              margin: EdgeInsets.all(25.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  TextButton.icon(
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    icon: Icon(Icons.arrow_back_ios, size: 18),
+                    label: Text("Kembali"),
+                  ),
+                  TurnButton(),
+                ],
               ),
-              ElevatedButton(
-                style: ElevatedButton.styleFrom(fixedSize: const Size(120, 40)),
-                onPressed: () {},
-                child: const Text('Kumpulkan'),
+            ),
+            Container(
+              margin: EdgeInsets.symmetric(horizontal: 25.0),
+              child: Text(
+                widget.assignment.course + ' (' + widget.assignment.room + ')',
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
               ),
-            ],
-          ),
+            ),
+            Container(
+                margin: EdgeInsets.symmetric(horizontal: 25.0),
+                child: Text('Deadline ' + widget.assignment.due)),
+            Container(
+                margin: EdgeInsets.only(top: 20, left: 25, right: 25),
+                child: Text('Instruksi',
+                    style:
+                        TextStyle(fontWeight: FontWeight.bold, fontSize: 17))),
+            Container(
+                margin: EdgeInsets.symmetric(horizontal: 25.0),
+                child: Text(widget.assignment.instructions)),
+          ],
         ),
       ),
+    );
+  }
+}
+
+class TurnButton extends StatefulWidget {
+  @override
+  _TurnButtonState createState() => _TurnButtonState();
+}
+
+class _TurnButtonState extends State<TurnButton> {
+  bool isNotTurned = true;
+
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+      style: ElevatedButton.styleFrom(fixedSize: const Size(120, 40)),
+      onPressed: isNotTurned
+          ? () {
+              setState(() => isNotTurned = false);
+            }
+          : null,
+      child: isNotTurned ? Text('Kumpulkan') : Text('Dikumpukan'),
     );
   }
 }

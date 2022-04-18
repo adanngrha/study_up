@@ -188,6 +188,7 @@ class _DetailClassWebState extends State<DetailClassWeb> {
                                 onPressed: () {
                                   Navigator.pop(context);
                                 },
+                                style: ElevatedButton.styleFrom(fixedSize: Size(150, 40)),
                                 icon: Icon(
                                   Icons.arrow_back_rounded,
                                   size: 24.0,
@@ -209,3 +210,5 @@ class _DetailClassWebState extends State<DetailClassWeb> {
     );
   }
 }
+
+
