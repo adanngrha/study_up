@@ -4,14 +4,9 @@ import 'package:study_up/model/turned_assignment.dart';
 import 'package:study_up/screens/assignment/detail_assigned_assignment.dart';
 import 'package:study_up/screens/assignment/detail_returned_assignment.dart';
 
-class AssignmentScreen extends StatefulWidget {
+class AssignmentScreen extends StatelessWidget {
   const AssignmentScreen({Key? key}) : super(key: key);
 
-  @override
-  State<AssignmentScreen> createState() => _AssignmentScreenState();
-}
-
-class _AssignmentScreenState extends State<AssignmentScreen> {
   @override
   Widget build(BuildContext context) {
     return TabBarView(

@@ -91,15 +91,10 @@ class DetailClassMobile extends StatelessWidget {
 }
 
 // ===== DetailClassWeb =====
-class DetailClassWeb extends StatefulWidget {
+class DetailClassWeb extends StatelessWidget {
   final Course course;
   const DetailClassWeb({Key? key, required this.course}) : super(key: key);
 
-  @override
-  State<DetailClassWeb> createState() => _DetailClassWebState();
-}
-
-class _DetailClassWebState extends State<DetailClassWeb> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -122,7 +117,7 @@ class _DetailClassWebState extends State<DetailClassWeb> {
                       child: Column(
                         children: [
                           ClipRRect(
-                            child: Image.asset(widget.course.imageAsset),
+                            child: Image.asset(course.imageAsset),
                             borderRadius: BorderRadius.circular(10),
                           ),
                           SizedBox(height: 16),
@@ -140,7 +135,7 @@ class _DetailClassWebState extends State<DetailClassWeb> {
                             Container(
                               padding: EdgeInsets.only(bottom: 20.0),
                               child: Text(
-                                widget.course.name,
+                                course.name,
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
                                     fontSize: 30.0,
@@ -153,15 +148,14 @@ class _DetailClassWebState extends State<DetailClassWeb> {
                                 Column(
                                   children: <Widget>[
                                     Center(
-                                        child: Text(widget.course.day,
+                                        child: Text(course.day,
                                             textAlign: TextAlign.center))
                                   ],
                                 ),
                                 Column(
                                   children: <Widget>[
                                     Center(
-                                        child: Text(
-                                            'Kelas ' + widget.course.room,
+                                        child: Text('Kelas ' + course.room,
                                             textAlign: TextAlign.center,
                                             style: TextStyle(
                                                 fontWeight: FontWeight.bold)))
@@ -170,7 +164,7 @@ class _DetailClassWebState extends State<DetailClassWeb> {
                                 Column(
                                   children: <Widget>[
                                     Center(
-                                        child: Text(widget.course.time,
+                                        child: Text(course.time,
                                             textAlign: TextAlign.center))
                                   ],
                                 ),
@@ -179,7 +173,7 @@ class _DetailClassWebState extends State<DetailClassWeb> {
                             Container(
                               padding: EdgeInsets.symmetric(vertical: 20.0),
                               child: Text(
-                                widget.course.description,
+                                course.description,
                                 textAlign: TextAlign.justify,
                                 style: TextStyle(fontSize: 16.0),
                               ),

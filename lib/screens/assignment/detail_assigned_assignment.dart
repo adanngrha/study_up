@@ -67,16 +67,10 @@ class DetailAssignedMobile extends StatelessWidget {
   }
 }
 
-class DetailAssignedWeb extends StatefulWidget {
+class DetailAssignedWeb extends StatelessWidget {
   final AssignedAssignment assignment;
-  const DetailAssignedWeb({Key? key, required this.assignment})
-      : super(key: key);
+  const DetailAssignedWeb({Key? key, required this.assignment}) : super(key: key);
 
-  @override
-  State<DetailAssignedWeb> createState() => _DetailAssignedWebState();
-}
-
-class _DetailAssignedWebState extends State<DetailAssignedWeb> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -103,13 +97,13 @@ class _DetailAssignedWebState extends State<DetailAssignedWeb> {
             Container(
               margin: EdgeInsets.symmetric(horizontal: 25.0),
               child: Text(
-                widget.assignment.course + ' (' + widget.assignment.room + ')',
+                assignment.course + ' (' + assignment.room + ')',
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
               ),
             ),
             Container(
                 margin: EdgeInsets.symmetric(horizontal: 25.0),
-                child: Text('Deadline ' + widget.assignment.due)),
+                child: Text('Deadline ' + assignment.due)),
             Container(
                 margin: EdgeInsets.only(top: 20, left: 25, right: 25),
                 child: Text('Instruksi',
@@ -117,7 +111,7 @@ class _DetailAssignedWebState extends State<DetailAssignedWeb> {
                         TextStyle(fontWeight: FontWeight.bold, fontSize: 17))),
             Container(
                 margin: EdgeInsets.symmetric(horizontal: 25.0),
-                child: Text(widget.assignment.instructions)),
+                child: Text(assignment.instructions)),
           ],
         ),
       ),

@@ -72,15 +72,10 @@ class DetailTurnedMobile extends StatelessWidget {
   }
 }
 
-class DetailTurnedWeb extends StatefulWidget {
+class DetailTurnedWeb extends StatelessWidget {
   final TurnedAssignment assignment;
   const DetailTurnedWeb({Key? key, required this.assignment}) : super(key: key);
 
-  @override
-  State<DetailTurnedWeb> createState() => _DetailTurnedWebState();
-}
-
-class _DetailTurnedWebState extends State<DetailTurnedWeb> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -112,13 +107,13 @@ class _DetailTurnedWebState extends State<DetailTurnedWeb> {
             Container(
               margin: EdgeInsets.symmetric(horizontal: 25.0),
               child: Text(
-                widget.assignment.course + ' (' + widget.assignment.room + ')',
+                assignment.course + ' (' + assignment.room + ')',
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
               ),
             ),
             Container(
                 margin: EdgeInsets.symmetric(horizontal: 25.0),
-                child: Text('Deadline ' + widget.assignment.due)),
+                child: Text('Deadline ' + assignment.due)),
             Container(
                 margin: EdgeInsets.only(top: 20, left: 25, right: 25),
                 child: Text('Instruksi',
@@ -126,7 +121,7 @@ class _DetailTurnedWebState extends State<DetailTurnedWeb> {
                         TextStyle(fontWeight: FontWeight.bold, fontSize: 17))),
             Container(
                 margin: EdgeInsets.symmetric(horizontal: 25.0),
-                child: Text(widget.assignment.instructions)),
+                child: Text(assignment.instructions)),
           ],
         ),
       ),
